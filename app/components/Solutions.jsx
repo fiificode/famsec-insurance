@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+import { BiCheck } from "react-icons/bi";
 
 const solutionContent = {
   text: {
@@ -68,8 +70,10 @@ const Solutions = () => {
                 <div className="flex justify-end gap-2">
                   <div className="w-4/12 flex">
                     <div className="ml-auto">
-                      <div className="bg-greenLight w-10 h-10 lg:w-24 lg:h-24
-                       rounded-2xl rounded-bl-[200px]"></div>
+                      <div
+                        className="bg-greenLight w-10 h-10 lg:w-24 lg:h-24
+                       rounded-2xl rounded-bl-[200px]"
+                      ></div>
                     </div>
                   </div>
                   <div className="w-6/12">
@@ -90,23 +94,21 @@ const Solutions = () => {
                   </div>
                   <div>
                     <Image
-                      src={solutionContent?.images?.img3}
+                      src={solutionContent?.images?.img2}
                       alt="image"
                       width={547}
                       height={573}
-                      className="object-cover w-full h-full rounded-lg shadow-2xl"
+                      className="object-cover w-full h-full overflow-hidden rounded-lg shadow-2xl"
                     />
                   </div>
                   {solutionContent?.experience?.label && (
                     <div>
-                        <div className="p-4 lg:p-10 shadow-2xl rounded-lg bg-white w-full leading-5">
-                            <strong className="block font-bold text-primary text-xl lg:text-5xl">
-                                {solutionContent.experience.year}
-                            </strong>
-                            <span>
-                              {solutionContent.experience.label}
-                            </span>
-                        </div>
+                      <div className="p-4 lg:p-10 shadow-2xl rounded-lg bg-white w-full leading-5">
+                        <strong className="block font-bold text-primary text-xl lg:text-5xl">
+                          {solutionContent.experience.year}
+                        </strong>
+                        <span>{solutionContent.experience.label}</span>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -116,12 +118,12 @@ const Solutions = () => {
           <div className="lg:w-5/12 relative z-10">
             {solutionContent?.text.headingSubTitle && (
               <span
-                  className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative 
+                className="inline-block py-0.5 z-50 pl-3 text-heading font-semibold relative 
                         mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight 
                         before:left-0 before:top-0 before:bottom-0 before:z-[-1]"
-                >
-                  {solutionContent?.text.headingSubTitle}
-                </span>
+              >
+                {solutionContent?.text.headingSubTitle}
+              </span>
             )}
             {solutionContent?.text.headingTitle && (
               <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5">
@@ -133,6 +135,38 @@ const Solutions = () => {
                 {solutionContent.text.description}
               </p>
             )}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 w-full gap-4 md:gap-5 mb-10">
+              {solutionContent?.text?.features.map((feature, idx) => (
+                <li
+                  className="flex flex-grow items-center space-x-5"
+                  key={feature.title}
+                >
+                  <span className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
+                    <BiCheck className="text-white text-xl" />
+                  </span>
+                  <span>{feature.title}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex space-x-3">
+              <Link
+                href={solutionContent?.text?.cta.btn1.href}
+                className="py-4 px-5 bg-primary text-white rounded-lg duration-300 
+                    transition-all ease-in-out hover:bg-[#134761] hover:shadow-lg 
+                    inline-block relative top-0 hover:-top-1"
+              >
+                {solutionContent?.text?.cta?.btn1?.label}
+              </Link>
+              <Link
+                href={solutionContent?.text?.cta?.btn2?.href}
+                className="py-4 px-5 bg-secondary text-white rounded-lg duration-300 
+                    transition-all ease-in-out hover:bg-[#179792] hover:shadow-lg 
+                    inline-block relative top-0 hover:-top-1"
+              >
+                {solutionContent?.text?.cta?.btn2?.label}
+              </Link>
+            </div>
           </div>
         </div>
       </div>
