@@ -33,21 +33,23 @@ const navigationMenu = [
 ];
 
 const Navbar = () => {
+  let height = window.innerHeight;
+  let width = window.innerWidth;
   const [navOpen, setNavOpen] = useState(false);
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
+  const [dimensions, setDimensions] = useState(height, width);
 
   const mobileMenuHandler = () => {
     setNavOpen(!navOpen);
   };
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return null;
+    }
     function handleResize() {
       setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
+        height,
+        width,
       });
       if (dimensions.width > 768 && navOpen) {
         setNavOpen(false);
@@ -58,7 +60,7 @@ const Navbar = () => {
     return (_) => {
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, [dimensions.width, height, navOpen, width]);
 
   return (
     <>

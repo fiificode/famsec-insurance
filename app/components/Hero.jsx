@@ -68,6 +68,7 @@ const HeroSection = () => {
                     alt="Image-1"
                     width={397}
                     height={406}
+                    priority
                     className="object-cover h-full rounded-2xl"
                   />
                 )}
@@ -118,7 +119,7 @@ const HeroSection = () => {
                 </div>
               </div>
               <div className="w-5/12">
-              {heroContent?.images?.img4 && (
+                {heroContent?.images?.img4 && (
                   <div>
                     <Image
                       src={heroContent?.images?.img4}
