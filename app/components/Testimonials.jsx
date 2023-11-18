@@ -81,6 +81,7 @@ const Testimonials = () => {
                   if (idx == 2) return null;
                   return (
                     <div
+                      key={idx}
                       className={`bg-white p-7 rounded-lg w-full ${
                         idx == 1 ? "" : "mb-6"
                       }`}
