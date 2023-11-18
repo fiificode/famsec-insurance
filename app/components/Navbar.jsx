@@ -33,8 +33,8 @@ const navigationMenu = [
 ];
 
 const Navbar = () => {
-  let height = window.innerHeight;
-  let width = window.innerWidth;
+  let height = 0;
+  let width = 0;
   const [navOpen, setNavOpen] = useState(false);
   const [dimensions, setDimensions] = useState(height, width);
 
