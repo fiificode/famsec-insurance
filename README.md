@@ -1,3 +1,5 @@
+![Untitled design](https://github.com/fiificode/famsec-insurance/assets/84854612/4722b864-8ac2-471b-8b3d-8a9290d9b972)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
