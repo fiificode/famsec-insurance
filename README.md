@@ -4,5 +4,5 @@
 This is a landing page for an Insurance Company FamSec.
 This project was created using Nextjs and tailwindcss. It is responsive on all devices.
 
-Check out the live demo on : [famsec-insurance.vercel.app]([https:famsec-insurance.vercel.app](https://famsec-insurance.vercel.app/))
+Check out the live demo on : [famsec-insurance.vercel.app](https://famsec-insurance.vercel.app/)
 
